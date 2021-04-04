@@ -50,6 +50,8 @@ body {
 
 .calculator {
   box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.3);
+  border-radius: 0.5em;
+  overflow: hidden;
 }
 
 .calculator__display {
@@ -63,6 +65,7 @@ body {
 .calculator__keys {
   background: var(--grey-200);
   display: grid;
+  grid-gap: 2px;
   grid-template-columns: repeat(4, auto);
   grid-template-areas:
     ". . . ."
@@ -70,6 +73,9 @@ body {
     "four five six equal"
     "one two three equal"
     "zero decimal clear equal";
+}
+.calculator__keys > button {
+  border: 0;
 }
 .one {
   grid-area: one;
@@ -112,8 +118,8 @@ body {
   grid-area: equal;
   background-color: var(--orange-400);
 }
-.equal:hover,
-.equal:focus {
+
+.equal:active {
   grid-area: equal;
   background-color: var(--orange-500);
 }
@@ -121,11 +127,12 @@ body {
 .operator {
   background: var(--grey-100);
 }
+
 .number {
   background: #fff;
 }
 
-.number:hover,
-.number:focus {
-  background: var(--grey-100);
+.operator:active,
+.number:active {
+  background: var(--grey-200);
 }
